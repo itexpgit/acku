@@ -79,7 +79,7 @@ public class MenuTest {
         wait.until(ExpectedConditions.urlToBe("https://bamboo-gardens.com/wp-content/uploads/2019/03/SampleMenu-Mar2019.pdf"));
         Thread.sleep(2000);
         System.out.println("Sample Menu Validation completed");
-        driver.close();
+       
 
     }
 
