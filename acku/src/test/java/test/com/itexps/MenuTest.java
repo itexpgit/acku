@@ -70,7 +70,7 @@ public class MenuTest {
         Thread.sleep(2000);
         System.out.println("Selected Menu");
         driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[1]")).click();
-        Thread.sleep(3000);
+        Thread.sleep(10000);
         System.out.println("Selected Sample Menu");
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
