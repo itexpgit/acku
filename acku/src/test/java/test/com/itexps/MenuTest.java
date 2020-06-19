@@ -69,7 +69,6 @@ public class MenuTest {
         driver.findElement(By.cssSelector("[title=\"Menu\"]")).click();
         Thread.sleep(2000);
         System.out.println("Selected Menu");
-        //Validate Sample Menu
         driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[1]")).click();
         Thread.sleep(2000);
         System.out.println("Selected Sample Menu");
