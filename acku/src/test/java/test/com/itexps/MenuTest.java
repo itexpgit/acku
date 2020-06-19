@@ -93,16 +93,7 @@ public class MenuTest {
         System.out.println("Craft Cocktail Validation completed");
         Thread.sleep(2000);
         driver.close();
-        driver.switchTo().window(tabs.get(0));
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[3]")).click();
-        System.out.println("Selected Order Online");
-        ArrayList<String> tabs3 = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs3.get(1));
-        wait.until(ExpectedConditions.urlToBe("https://www.inchinsonline.com/products"));
-        System.out.println("Inchinsonline order website opened");
-        Thread.sleep(2000);
+
     }
 
 }
