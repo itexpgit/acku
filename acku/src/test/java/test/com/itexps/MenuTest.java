@@ -43,7 +43,7 @@ public class MenuTest {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "c:\\data\\chromedriver.exe");
         driver = new ChromeDriver();
-        baseUrl = "https://www.inchinsonline.com";
+        baseUrl = "https://bamboo-gardens.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
     
@@ -60,11 +60,12 @@ public class MenuTest {
         
         driver.manage().window().maximize();
         driver.get(baseUrl);
-        System.out.println("Loaded Inchins website");
-        Thread.sleep(5000);
-        driver.findElement(By.linkText("Login")).click();
-        System.out.println("Selected Login");
-        Thread.sleep(5000);
+        System.out.println("Loaded Bamboo Garden website");
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector("[title=\"Menu\"]")).click();
+        Thread.sleep(2000);
+        System.out.println("Selected Menu");
+        
     }
 
 }
