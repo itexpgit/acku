@@ -6,6 +6,7 @@
 package test.com.itexps;
 
 import java.util.ArrayList;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -65,44 +66,30 @@ public class MenuTest {
         driver.manage().window().maximize();
         driver.get(baseUrl);
         System.out.println("Loaded Bamboo Garden website");
-        Thread.sleep(10000);
+        Thread.sleep(1000);
         driver.findElement(By.cssSelector("[title=\"Menu\"]")).click();
         Thread.sleep(2000);
         System.out.println("Selected Menu");
         driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[1]")).click();
         Thread.sleep(1000);
         System.out.println("Selected Sample Menu");
+        Set allWindwHandles = driver.getWindowHandles();
+        int winCount = allWindwHandles.size();
+        while (true)
+        {   
+        if (winCount  != 2)
+        {
+            allWindwHandles = driver.getWindowHandles();
+            winCount = allWindwHandles.size();
+            System.out.println("Still in loop");
+        }
+        else
+            break;
+        }
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
-        System.out.println("Focus shifted to second tab");
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.urlToBe("https://bamboo-gardens.com/wp-content/uploads/2019/03/SampleMenu-Mar2019.pdf"));
-        Thread.sleep(2000);
-        System.out.println("Sample Menu Validation completed");
-        driver.close();
-        Thread.sleep(2000);
-        driver.switchTo().window(tabs.get(0));
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[2]")).click();
-        System.out.println("Craft Cocktail Menu Opened");
-        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs2.get(1));
-        System.out.println("Focus shifted to second tab");
-        wait.until(ExpectedConditions.urlToBe("https://bamboo-gardens.com/wp-content/uploads/2019/03/CraftCocktail_SampleMenu.pdf"));
-        System.out.println("Craft Cocktail Validation completed");
-        Thread.sleep(2000);
-        driver.close();
-        driver.switchTo().window(tabs.get(0));
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[3]")).click();
-        System.out.println("Selected Order Online");
-        ArrayList<String> tabs3 = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs3.get(1));
-        wait.until(ExpectedConditions.urlToBe("https://www.inchinsonline.com/products"));
-        System.out.println("Inchinsonline order website opened");
-        Thread.sleep(2000);
+        System.out.println("Out of loop and on new window");
+       
         driver.close();
 
     }
