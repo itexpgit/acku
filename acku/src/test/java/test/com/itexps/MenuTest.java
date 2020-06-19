@@ -65,12 +65,12 @@ public class MenuTest {
         driver.manage().window().maximize();
         driver.get(baseUrl);
         System.out.println("Loaded Bamboo Garden website");
-        Thread.sleep(1000);
+        Thread.sleep(10000);
         driver.findElement(By.cssSelector("[title=\"Menu\"]")).click();
         Thread.sleep(2000);
         System.out.println("Selected Menu");
         driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[1]")).click();
-        Thread.sleep(10000);
+        Thread.sleep(1000);
         System.out.println("Selected Sample Menu");
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
@@ -91,6 +91,17 @@ public class MenuTest {
         System.out.println("Focus shifted to second tab");
         wait.until(ExpectedConditions.urlToBe("https://bamboo-gardens.com/wp-content/uploads/2019/03/CraftCocktail_SampleMenu.pdf"));
         System.out.println("Craft Cocktail Validation completed");
+        Thread.sleep(2000);
+        driver.close();
+        driver.switchTo().window(tabs.get(0));
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[3]")).click();
+        System.out.println("Selected Order Online");
+        ArrayList<String> tabs3 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs3.get(1));
+        wait.until(ExpectedConditions.urlToBe("https://www.inchinsonline.com/products"));
+        System.out.println("Inchinsonline order website opened");
         Thread.sleep(2000);
         driver.close();
 
