@@ -78,21 +78,9 @@ public class MenuTest {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.urlToBe("https://bamboo-gardens.com/wp-content/uploads/2019/03/SampleMenu-Mar2019.pdf"));
         Thread.sleep(2000);
-        driver.close();
         System.out.println("Sample Menu Validation completed");
-        Thread.sleep(2000);
-        driver.switchTo().window(tabs.get(0));
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[2]")).click();
-        System.out.println("Craft Cocktail Menu Opened");
-        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs2.get(1));
-        System.out.println("Focus shifted to second tab");
-        wait.until(ExpectedConditions.urlToBe("https://bamboo-gardens.com/wp-content/uploads/2019/03/CraftCocktail_SampleMenu.pdf"));
-        System.out.println("Craft Cocktail Validation completed");
-        Thread.sleep(2000);
         driver.close();
+
     }
 
 }
