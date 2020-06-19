@@ -43,7 +43,7 @@ public class MenuTest {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "c:\\data\\chromedriver.exe");
         driver = new ChromeDriver();
-        baseUrl = "https://www.inchinsonline.com/login";
+        baseUrl = "https://www.inchinsonline.com";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
     
@@ -61,19 +61,10 @@ public class MenuTest {
         driver.manage().window().maximize();
         driver.get(baseUrl);
         System.out.println("Loaded Inchins website");
-        Thread.sleep(1000);
-        driver.findElement(By.id("email")).click();
-        System.out.println("Clicked Email");
-        Thread.sleep(1000);
-        driver.findElement(By.name("email")).sendKeys("ackuselenium@gmail.com");
-        System.out.println("Entered Email");
-        Thread.sleep(1000);
-        driver.findElement(By.name("password")).click();
-        System.out.println("Clicked Password");
-        Thread.sleep(1000);
-        driver.findElement(By.name("password")).sendKeys("itexperts");
-        System.out.println("Entered Password");
-        Thread.sleep(1000);
-        
-}
+        Thread.sleep(5000);
+        driver.findElement(By.linkText("Login")).click();
+        System.out.println("Selected Login");
+        Thread.sleep(5000);
+    }
+
 }
