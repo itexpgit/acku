@@ -43,7 +43,7 @@ public class MenuTest {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "c:\\data\\chromedriver.exe");
         driver = new ChromeDriver();
-        baseUrl = "https://www.inchinsonline.com";
+        baseUrl = "https://www.inchinsonline.com/login";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
     
@@ -61,8 +61,6 @@ public class MenuTest {
         driver.manage().window().maximize();
         driver.get(baseUrl);
         System.out.println("Loaded Inchins website");
-        driver.findElement(By.xpath("//*[@id=\"navbar\"]/ul[2]/li[1]/a")).click();
-        System.out.println("Clicked Login");
         Thread.sleep(1000);
         driver.findElement(By.id("email")).click();
         System.out.println("Clicked Email");
@@ -75,24 +73,6 @@ public class MenuTest {
         Thread.sleep(1000);
         driver.findElement(By.name("password")).sendKeys("itexperts");
         System.out.println("Entered Password");
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
-        System.out.println("Clicked Submit");
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"location-list\"]/li[1]/h4/a")).click();
-        System.out.println("Selected Schamburg location");
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//div[@id='price-list-0']/ul/li/h5")).click();
-        System.out.println("Clicked Main Menu");
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"all-categories\"]/ul/li[6]/a")).click();
-        System.out.println("Clicked Noodles");
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"Noodles\"]/div[1]/ul/li[3]/hs-product-item/div/div/div/div[1]/img")).click();
-        System.out.println("Seleceted chicken garlic noodles");
-        Thread.sleep(2000);
-        driver.findElement(By.id("update-btn")).click();
-        System.out.println("Added to cart");
         Thread.sleep(1000);
         
 }
