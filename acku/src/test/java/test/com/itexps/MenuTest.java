@@ -72,6 +72,7 @@ public class MenuTest {
         System.out.println("Selected Sample Menu");
         int winCount;
         do {
+            System.out.println("In the loop");
             Set allWindwHandles = driver.getWindowHandles();
             winCount = allWindwHandles.size();
             Thread.sleep(1000);
