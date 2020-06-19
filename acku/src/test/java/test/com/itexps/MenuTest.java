@@ -73,12 +73,14 @@ public class MenuTest {
         driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[1]")).click();
         Thread.sleep(1000);
         System.out.println("Selected Sample Menu");
-        Set allWindwHandles = driver.getWindowHandles();
-        int winCount = allWindwHandles.size();
-        while(winCount != 2)
-        {
-            Thread.sleep(10000);
+        int winCount;
+        do {
+            Set allWindwHandles = driver.getWindowHandles();
+            winCount = allWindwHandles.size();
+            Thread.sleep(1000);
         }
+        
+        while(winCount !=2);
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
         System.out.println("Focus shifted to second tab");
@@ -93,12 +95,14 @@ public class MenuTest {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[2]")).click();
         System.out.println("Craft Cocktail Menu Opened");
-        Set allWindwHandles1 = driver.getWindowHandles();
-        int winCount1 = allWindwHandles1.size();
-        while(winCount1 != 2)
-        {
-            Thread.sleep(10000);
+        int winCount1;
+        do {
+            Set allWindwHandles1 = driver.getWindowHandles();
+            winCount1 = allWindwHandles1.size();
+            Thread.sleep(1000);
         }
+        
+        while(winCount1 !=2);
         ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(1));
         System.out.println("Focus shifted to second tab");
@@ -111,12 +115,14 @@ public class MenuTest {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[3]")).click();
         System.out.println("Selected Order Online");
-        Set allWindwHandles3 = driver.getWindowHandles();
-        int winCount3 = allWindwHandles3.size();
-        while(winCount3 != 2)
-        {
-            Thread.sleep(10000);
+        int winCount2;
+        do {
+            Set allWindwHandles2 = driver.getWindowHandles();
+            winCount2 = allWindwHandles2.size();
+            Thread.sleep(1000);
         }
+        
+        while(winCount2 !=2);
         ArrayList<String> tabs3 = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs3.get(1));
         wait.until(ExpectedConditions.urlToBe("https://www.inchinsonline.com/products"));
@@ -128,7 +134,24 @@ public class MenuTest {
         driver.findElement(By.xpath("//div[@id='price-list-0']/ul/li/h5")).click();
         System.out.println("Main Menu selected");
         Thread.sleep(2000);
-
+        driver.findElement(By.linkText("Login")).click();
+        System.out.println("Login Selected");
+        Thread.sleep(1000);
+        driver.findElement(By.id("email")).click();
+        System.out.println("Email Selected");
+        Thread.sleep(1000);
+        driver.findElement(By.name("email")).sendKeys("ackuselenium@gmail.com");
+        System.out.println("Email Entered");
+        Thread.sleep(1000);
+        driver.findElement(By.name("password")).click();
+        System.out.println("Password Selected");
+        Thread.sleep(1000);
+        driver.findElement(By.name("password")).sendKeys("itexperts");
+        System.out.println("Password Entered");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        System.out.println("Login process completed");
+        Thread.sleep(1000);
        
         driver.close();
 
