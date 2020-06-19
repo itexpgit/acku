@@ -120,18 +120,6 @@ public class MenuTest {
         System.out.println("Chicago location selected");
         driver.findElement(By.xpath("//div[@id='price-list-0']/ul/li/h5")).click();
         System.out.println("Main Menu selected");
-        driver.findElement(By.xpath("//*[@id=\"navbar\"]/ul[2]/li[2]/a")).click();
-        System.out.println("Login Selected");
-        driver.findElement(By.id("email")).click();
-        System.out.println("Email Selected");
-        driver.findElement(By.name("email")).sendKeys("ackuselenium@gmail.com");
-        System.out.println("Email Entered");
-        driver.findElement(By.name("password")).click();
-        System.out.println("Password Selected");
-        driver.findElement(By.name("password")).sendKeys("itexperts");
-        System.out.println("Password Entered");
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
-        System.out.println("Login process completed");
             
         driver.close();
 
