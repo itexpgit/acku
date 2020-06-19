@@ -122,6 +122,12 @@ public class MenuTest {
         wait.until(ExpectedConditions.urlToBe("https://www.inchinsonline.com/products"));
         System.out.println("Inchinsonline order website opened");
         Thread.sleep(2000);
+        driver.findElement(By.linkText("Select This Location")).click();
+        System.out.println("Chicago location selected");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//div[@id='price-list-0']/ul/li/h5")).click();
+        System.out.println("Main Menu selected");
+        Thread.sleep(2000);
 
        
         driver.close();
