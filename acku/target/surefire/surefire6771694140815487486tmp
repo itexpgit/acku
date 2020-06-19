@@ -1,0 +1,8 @@
+#surefire
+#Fri Jun 19 13:55:35 CDT 2020
+maven.ext.class.path=C\:\\Program Files\\NetBeans 8.2\\java\\maven-nblib\\netbeans-eventspy.jar
+user.dir=C\:\\Users\\Uma\\Documents\\NetBeansProjects\\acku
+file.encoding=UTF-8
+localRepository=C\:\\Users\\Uma\\.m2\\repository
+basedir=C\:\\Users\\Uma\\Documents\\NetBeansProjects\\acku
+test=test.com.itexps.MenuTest

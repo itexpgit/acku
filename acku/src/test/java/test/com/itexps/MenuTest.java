@@ -75,23 +75,22 @@ public class MenuTest {
         System.out.println("Selected Sample Menu");
         Set allWindwHandles = driver.getWindowHandles();
         int winCount = allWindwHandles.size();
-        while (true)
-        {   
-        if (winCount  != 2)
+      
+        while(winCount != 2)
+               
+       
         {
-            allWindwHandles = driver.getWindowHandles();
-            winCount = allWindwHandles.size();
-            System.out.println("Still in loop");
+            Thread.sleep(10000);
         }
-        else
-            break;
-        }
+                  
+        
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
         System.out.println("Out of loop and on new window");
        
         driver.close();
 
+        
     }
 
 }
