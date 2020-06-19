@@ -5,6 +5,7 @@
  */
 package test.com.itexps;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -16,6 +17,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
@@ -69,7 +72,16 @@ public class MenuTest {
         driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[1]")).click();
         Thread.sleep(2000);
         System.out.println("Selected Sample Menu");
-        
+        //Switch focus to new tab
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+        System.out.println("Focus shifted to second tab");
+        //wait execution until Sample menu pdf opens
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.urlToBe("https://bamboo-gardens.com/wp-content/uploads/2019/03/SampleMenu-Mar2019.pdf"));
+        Thread.sleep(2000);
+        driver.close();
+        System.out.println("Sample Menu Validation completed");
     }
 
 }
