@@ -75,18 +75,54 @@ public class MenuTest {
         System.out.println("Selected Sample Menu");
         Set allWindwHandles = driver.getWindowHandles();
         int winCount = allWindwHandles.size();
-      
         while(winCount != 2)
-               
-       
         {
             Thread.sleep(10000);
         }
-                  
-        
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
-        System.out.println("Out of loop and on new window");
+        System.out.println("Focus shifted to second tab");
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.urlToBe("https://bamboo-gardens.com/wp-content/uploads/2019/03/SampleMenu-Mar2019.pdf"));
+        Thread.sleep(2000);
+        System.out.println("Sample Menu Validation completed");
+        driver.close();
+        Thread.sleep(2000);
+        driver.switchTo().window(tabs.get(0));
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[2]")).click();
+        System.out.println("Craft Cocktail Menu Opened");
+        Set allWindwHandles1 = driver.getWindowHandles();
+        int winCount1 = allWindwHandles1.size();
+        while(winCount1 != 2)
+        {
+            Thread.sleep(10000);
+        }
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
+        System.out.println("Focus shifted to second tab");
+        wait.until(ExpectedConditions.urlToBe("https://bamboo-gardens.com/wp-content/uploads/2019/03/CraftCocktail_SampleMenu.pdf"));
+        System.out.println("Craft Cocktail Validation completed");
+        Thread.sleep(2000);
+        driver.close();
+        driver.switchTo().window(tabs.get(0));
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[3]")).click();
+        System.out.println("Selected Order Online");
+        Set allWindwHandles3 = driver.getWindowHandles();
+        int winCount3 = allWindwHandles3.size();
+        while(winCount3 != 2)
+        {
+            Thread.sleep(10000);
+        }
+        ArrayList<String> tabs3 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs3.get(1));
+        wait.until(ExpectedConditions.urlToBe("https://www.inchinsonline.com/products"));
+        System.out.println("Inchinsonline order website opened");
+        Thread.sleep(2000);
+
        
         driver.close();
 
