@@ -58,7 +58,7 @@ public class MenuTest {
     @Test
     public void hello() throws InterruptedException {
         
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.get(baseUrl);
         driver.findElement(By.linkText("Login")).click();
         Thread.sleep(1000);
