@@ -43,7 +43,7 @@ public class MenuTest {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "c:\\data\\chromedriver.exe");
         driver = new ChromeDriver();
-        baseUrl = "https://www.inchinsonline.com";
+        baseUrl = "https://www.inchinsonline.com/login";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
     
@@ -58,11 +58,9 @@ public class MenuTest {
     @Test
     public void hello() throws InterruptedException {
         
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
         driver.get(baseUrl);
-        Thread.sleep(5000);
-        System.out.println("Entering 5 sec delay to look for Login button");
-        driver.findElement(By.linkText("Login")).click();
+        //driver.findElement(By.linkText("Login")).click();
         Thread.sleep(1000);
         driver.findElement(By.id("email")).click();
         Thread.sleep(1000);
