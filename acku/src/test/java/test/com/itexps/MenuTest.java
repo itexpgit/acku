@@ -60,6 +60,8 @@ public class MenuTest {
         
         //driver.manage().window().maximize();
         driver.get(baseUrl);
+        Thread.sleep(5000);
+        System.out.println("Entering 5 sec delay to look for Login button");
         driver.findElement(By.linkText("Login")).click();
         Thread.sleep(1000);
         driver.findElement(By.id("email")).click();
