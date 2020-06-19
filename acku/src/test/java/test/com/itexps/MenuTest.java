@@ -65,10 +65,11 @@ public class MenuTest {
         
         driver.manage().window().maximize();
         driver.get(baseUrl);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         System.out.println("Loaded Bamboo Garden website");
         driver.findElement(By.cssSelector("[title=\"Menu\"]")).click();
         System.out.println("Selected Menu");
-        driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[1]")).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"menu-content\"]/a[1]"))).click();        
         System.out.println("Selected Sample Menu");
         int winCount;
         do {
@@ -82,7 +83,6 @@ public class MenuTest {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
         System.out.println("Focus shifted to second tab");
-        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.urlToBe("https://bamboo-gardens.com/wp-content/uploads/2019/03/SampleMenu-Mar2019.pdf"));
         System.out.println("Sample Menu Validation completed");
         driver.close();
