@@ -56,11 +56,11 @@ public class MenuTest {
         driver.quit();
     }
 
-    // TODO add test methods here.
+    /* TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
-    //
+    /*/
     @Test
-    public void hello() throws InterruptedException {
+    public void hello() throws Exception {
         
         driver.manage().window().maximize();
         driver.get(baseUrl);
@@ -70,7 +70,7 @@ public class MenuTest {
         Thread.sleep(2000);
         System.out.println("Selected Menu");
         driver.findElement(By.xpath("//*[@id=\"menu-content\"]/a[1]")).click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         System.out.println("Selected Sample Menu");
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
