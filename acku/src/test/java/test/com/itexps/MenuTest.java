@@ -72,7 +72,7 @@ public class MenuTest {
         driver.get(baseUrl);
         driver.findElement(By.id("email")).click();
         System.out.println("Email field selected");
-        driver.findElement(By.name("email")).sendKeys("ackuselenium@gmail.com");
+        driver.findElement(By.name("email")).sendKeys("ackuselenium5@gmail.com");
         System.out.println("Email Entered");
         driver.findElement(By.name("password")).click();
         System.out.println("Password field selected");
