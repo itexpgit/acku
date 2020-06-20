@@ -6,6 +6,7 @@
 package test.com.itexps;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
@@ -15,6 +16,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -78,7 +80,7 @@ public class MenuTest {
         System.out.println("Password entered");
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         System.out.println("Login completed");
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"location-list\"]/li[1]/h4/a")).click();
         System.out.println("Chicago location selected");
         Thread.sleep(2000);
