@@ -47,7 +47,9 @@ public class MenuTest {
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "c:\\data\\chromedriver.exe");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
+        driver = new ChromeDriver(options);
         baseUrl = "https://www.inchinsonline.com/login";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
@@ -75,10 +77,18 @@ public class MenuTest {
         System.out.println("Password entered");
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         System.out.println("Login completed");
-        
+        driver.findElement(By.linkText("Select This Location")).click();
+        System.out.println("Chicago location selected");
+        driver.findElement(By.xpath("//div[@id='price-list-0']/ul/li/h5")).click();
+        System.out.println("Main Menu selected");
+        Thread.sleep(2000);
+        driver.findElement(By.linkText("Noodles")).click();
+        System.out.println("Clicked Noodles Section");
+        driver.findElement(By.xpath("//img[@src='https://s3-us-west-2.amazonaws.com/www.gethomesome.com/productimages/ibg-noodles-hakka-mod.jpg']")).click();
+        System.out.println("Selected Chicken Garlic Noodles");
+        driver.findElement(By.id("update-btn")).click();
+        System.out.println("Added to cart");
  
-
-
             
         driver.close();
 
