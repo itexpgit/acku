@@ -83,7 +83,7 @@ public class MenuTest {
         Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"location-list\"]/li[1]/h4/a")).click();
         System.out.println("Chicago location selected");
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//div[@id='price-list-0']/ul/li/h5")).click();
         System.out.println("Main Menu selected");
         Thread.sleep(2000);
