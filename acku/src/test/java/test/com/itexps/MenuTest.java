@@ -95,7 +95,7 @@ public class MenuTest {
         //driver.findElement(By.id("update-btn")).click();
         //System.out.println("Added to cart");
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//img[@alt='Bowl Lunch Special']")).click();
+        driver.findElement(By.xpath("//img[@src='https://s3-us-west-2.amazonaws.com/www.gethomesome.com/productimages/ibg-lunch-bowl.jpg']")).click();
         System.out.println("Bowl Lunch Selected");
         Thread.sleep(3000);
         driver.switchTo().activeElement().sendKeys(Keys.TAB);
