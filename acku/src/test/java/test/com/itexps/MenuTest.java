@@ -17,6 +17,7 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -67,6 +68,7 @@ public class MenuTest {
         
         driver.manage().window().maximize();
         driver.get(baseUrl);
+        WebDriverWait wait1 = new WebDriverWait(driver, 30);
         driver.findElement(By.id("email")).click();
         System.out.println("Email field selected");
         driver.findElement(By.name("email")).sendKeys("ackuselenium@gmail.com");
@@ -77,9 +79,11 @@ public class MenuTest {
         System.out.println("Password entered");
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         System.out.println("Login completed");
-        driver.findElement(By.xpath("//*[@id=\"location-list\"]/li[1]/h4/a")).click();
+        WebElement element = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"location-list\"]/li[1]/h4/a")));
+        element.click();
         System.out.println("Chicago location selected");
-        driver.findElement(By.xpath("//div[@id='price-list-0']/ul/li/h5")).click();
+        WebElement element1 = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='price-list-0']/ul/li/h5")));
+        element1.click();
         System.out.println("Main Menu selected");
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"all-categories\"]/ul/li[6]/a")).click();
@@ -96,3 +100,5 @@ public class MenuTest {
     }
 
 }
+
+
