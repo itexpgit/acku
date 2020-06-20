@@ -92,9 +92,6 @@ public class MenuTest {
         driver.findElement(By.id("update-btn")).click();
         System.out.println("Added to cart");
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"navbar\"]/ul[2]/li[7]/a")).click();
-        System.out.println("Cart Loaded");
-            
         driver.close();
 
         
