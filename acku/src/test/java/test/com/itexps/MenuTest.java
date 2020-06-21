@@ -108,8 +108,15 @@ public class MenuTest {
         driver.switchTo().activeElement().sendKeys(Keys.ENTER);
         System.out.println("Check out process started");
         Thread.sleep(1000);
-        driver.findElement(By.cssSelector("input[tabindex=\"1\"]")).click();
-        driver.findElement(By.cssSelector("input[tabindex=\"1\"]")).sendKeys("2345678901234567");
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys("2345678901234567");
         System.out.println("Credit Card number entered");
         
         Thread.sleep(1000);
