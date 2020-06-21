@@ -89,8 +89,10 @@ public class MenuTest {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"all-categories\"]/ul/li[6]/a")).click();
         System.out.println("Clicked Noodles Section");
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//img[@src='https://s3-us-west-2.amazonaws.com/www.gethomesome.com/productimages/ibg-noodles-hakka-mod.jpg']")).click();
         System.out.println("Selected Hakka Noodles");
+        Thread.sleep(2000);
         driver.findElement(By.id("update-btn")).click();
         Thread.sleep(2000);
         System.out.println("Added to cart");
@@ -109,12 +111,12 @@ public class MenuTest {
         driver.switchTo().activeElement().sendKeys(Keys.TAB);
         driver.switchTo().activeElement().sendKeys(Keys.ENTER);
         System.out.println("Check out process started");
-        driver.findElement(By.name("ccNumber")).click();
-        driver.findElement(By.name("ccNumber")).clear();
+        driver.findElement(By.cssSelector("input[name=\"ccNumber\"]")).click();
+        driver.findElement(By.cssSelector("input[name=\"ccNumber\"]")).clear();
         Thread.sleep(1000);
-        driver.findElement(By.name("ccNumber")).sendKeys("234567891234");
+        driver.findElement(By.cssSelector("input[name=\"ccNumber\"]")).sendKeys("234567891234");
         System.out.println("Credit Card number entered");
-        Thread.sleep(1000);
+        /*Thread.sleep(1000);
         driver.findElement(By.name("ccExpiry")).click();
         driver.findElement(By.name("ccExpiry")).clear();
         driver.findElement(By.name("ccExpiry")).sendKeys("10/23");
@@ -130,7 +132,7 @@ public class MenuTest {
         driver.findElement(By.name("phoneUS")).sendKeys("4029067731");
         System.out.println("Phone Number Entered");
         Thread.sleep(1000);
-        Thread.sleep(1000);
+        Thread.sleep(1000);*/
         
         driver.close();
 
