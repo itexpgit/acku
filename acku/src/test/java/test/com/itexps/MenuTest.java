@@ -108,10 +108,12 @@ public class MenuTest {
         driver.switchTo().activeElement().sendKeys(Keys.ENTER);
         System.out.println("Check out process started");
         Thread.sleep(1000);
-        driver.findElement(By.name("ccNumber")).sendKeys("234567891234");
+        driver.findElement(By.cssSelector("input[tabindex=\"1\"]")).click();
+        driver.findElement(By.cssSelector("input[tabindex=\"1\"]")).sendKeys("2345678901234567");
         System.out.println("Credit Card number entered");
-        /*Thread.sleep(1000);
-        driver.findElement(By.name("ccExpiry")).click();
+        
+        Thread.sleep(1000);
+        /*driver.findElement(By.name("ccExpiry")).click();
         driver.findElement(By.name("ccExpiry")).clear();
         driver.findElement(By.name("ccExpiry")).sendKeys("10/23");
         System.out.println("Credit card expire entered");
