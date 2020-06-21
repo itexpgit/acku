@@ -127,10 +127,10 @@ public class MenuTest {
         driver.switchTo().activeElement().sendKeys(Keys.TAB);
         driver.switchTo().activeElement().sendKeys("4029067731");
         System.out.println("Phone Number Entered");
+        Thread.sleep(2000);
         driver.findElement(By.linkText("Place Order")).click();
         System.out.println("Order Placed");
         Thread.sleep(5000);
-        
         driver.close();
 
         
