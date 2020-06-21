@@ -118,24 +118,18 @@ public class MenuTest {
         driver.switchTo().activeElement().sendKeys(Keys.TAB);
         driver.switchTo().activeElement().sendKeys("2345678901234567");
         System.out.println("Credit Card number entered");
-        
-        Thread.sleep(1000);
-        /*driver.findElement(By.name("ccExpiry")).click();
-        driver.findElement(By.name("ccExpiry")).clear();
-        driver.findElement(By.name("ccExpiry")).sendKeys("10/23");
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys("10/23");
         System.out.println("Credit card expire entered");
-        Thread.sleep(1000);
-        driver.findElement(By.name("ccCvc")).click();
-        driver.findElement(By.name("ccCvc")).clear();
-        driver.findElement(By.name("ccCvc")).sendKeys("203");
-        System.out.println("Credit card CVC entered");
-        Thread.sleep(1000);
-        driver.findElement(By.name("phoneUS")).click();
-        driver.findElement(By.name("phoneUS")).clear();
-        driver.findElement(By.name("phoneUS")).sendKeys("4029067731");
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys("203");
+        System.out.println("Credit card CVV entered");
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys("4029067731");
         System.out.println("Phone Number Entered");
-        Thread.sleep(1000);
-        Thread.sleep(1000);*/
+        driver.findElement(By.linkText("Place Order")).click();
+        System.out.println("Order Placed");
+        Thread.sleep(5000);
         
         driver.close();
 
