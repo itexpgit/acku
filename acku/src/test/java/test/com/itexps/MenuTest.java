@@ -52,6 +52,8 @@ public class MenuTest {
         System.setProperty("webdriver.chrome.driver", "c:\\data\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
+        options.addArguments("--start-maximized");
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
         baseUrl = "https://www.inchinsonline.com/login";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -68,7 +70,6 @@ public class MenuTest {
     @Test
     public void hello() throws Exception {
         
-        driver.manage().window().maximize();
         driver.get(baseUrl);
         driver.findElement(By.name("email")).sendKeys("ackuselenium5@gmail.com");
         System.out.println("Email Entered");
@@ -92,49 +93,9 @@ public class MenuTest {
         driver.findElement(By.id("update-btn")).click();
         Thread.sleep(2000);
         System.out.println("Added to cart");
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        driver.switchTo().activeElement().sendKeys(Keys.ENTER);
-        driver.switchTo().activeElement().sendKeys(Keys.SPACE);
-        System.out.println("Selected Cart");
-        Thread.sleep(2000);
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        driver.switchTo().activeElement().sendKeys(Keys.ENTER);
-        System.out.println("Check out process started");
-        Thread.sleep(1000);
-        //driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        //driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        //driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        //driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        //driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        //driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        //driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        //driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        //driver.switchTo().activeElement().sendKeys("2345678901234567");
-        //System.out.println("Credit Card number entered");
-        //driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        //driver.switchTo().activeElement().sendKeys("10/23");
-        //System.out.println("Credit card expire entered");
-        //driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        //driver.switchTo().activeElement().sendKeys("203");
-        //System.out.println("Credit card CVV entered");
-        //driver.switchTo().activeElement().sendKeys(Keys.TAB);
-        //driver.switchTo().activeElement().sendKeys("4029067731");
-        //System.out.println("Phone Number Entered");
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@class='btn btn-primary btn-block btn-lg ng-binding']")).click();
-        System.out.println("Order Placed");
-        Thread.sleep(5000);
         driver.close();
-
-        
     }
+				
 
 }
 
