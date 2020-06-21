@@ -94,7 +94,13 @@ public class MenuTest {
         driver.findElement(By.id("update-btn")).click();
         Thread.sleep(2000);
         System.out.println("Added to cart");
-        driver.findElement(By.xpath("//*[@id=\"navbar\"]/ul[2]/li[7]/a")).click();
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys(Keys.TAB);
+        driver.switchTo().activeElement().sendKeys(Keys.ENTER);
+        driver.switchTo().activeElement().sendKeys(Keys.SPACE);
         System.out.println("Selected Cart");
         Thread.sleep(2000);
         driver.findElement(By.linkText("Checkout")).click();
