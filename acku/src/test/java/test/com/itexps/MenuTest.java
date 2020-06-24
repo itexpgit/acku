@@ -111,11 +111,11 @@ public class MenuTest {
         driver.findElement(By.name("phoneUS")).sendKeys("4029067731");
         System.out.println("Phone Number Entered");
         Thread.sleep(1000);
-        driver.findElement(By.xpath("/html/body/div[2]/section/div/div/div[4]/div[2]/div/ul/li[7]/div/a")).click();
-        System.out.println("Order Placed");
+        //driver.findElement(By.xpath("/html/body/div[2]/section/div/div/div[4]/div[2]/div/ul/li[7]/div/a")).click();
+        //System.out.println("Order Placed");
         Thread.sleep(1000);
         driver.findElement(By.xpath("//b[@class='caret']")).click();
-        System.out.println("ACKU Menu Clicked");
+        System.out.println("Yummy Order Placed");
         driver.findElement(By.xpath("//*[@id=\"navbar\"]/ul[2]/li[6]/ul/li[4]/a")).click();
         System.out.println("Logout completed");
         driver.close();
